@@ -4,7 +4,7 @@
 
 2-) wget http://wsutm.bluepex.com/packs/myvim.tar.gz
 
-3-) tar -zxvf myvim.tar.gz && 
+3-) tar -zxvf myvim.tar.gz
 
 4-) cd myvim
 
