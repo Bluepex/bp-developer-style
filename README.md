@@ -10,3 +10,4 @@
 
 5-) sudo mv myvim .vim
 
+6-) rm myvim.tar.gz
