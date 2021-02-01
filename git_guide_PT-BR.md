@@ -1,7 +1,7 @@
-###############
-# CLONAR REPO #
+# GIT TUTORIAL #
 ###############
 
+# CLONAR REPO #
 - FAZER FORK DO REPO BP
 - FAZER CLONE DO FORK
 - CONFIGURAR REMOTE UPSTREAM PARA O REPO DA BP com git remote add
@@ -10,12 +10,8 @@
 	Para FreeBSD-ports
 	 - git remote add upstream git@github.com:mvclaudianobj/FreeBSD-ports.git
 
-
-
-##################
+#######################################################################################
 # PARA ATUALIZAR #
-##################
-
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-RELENG_5_0_2 (Não rodar se for a primeira vez e o fork estiver desatualizado)
 - RODAR UM git fetch upstream
 - RODAR UM git rebase upstream/bp-RELENG_5_0_2
@@ -26,16 +22,13 @@
 - RODAR git reset --hard upstream/bp-master
 - RODAR git push
 
-############
+#######################################################################################
 # SE ERRAR #
-############
 - git stash
 - git branch -D nome_da_branch
 
-#####################################
+#######################################################################################
 # PARA CRIAR BRANCH NOVA E ABRIR PR #
-#####################################
-
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-RELENG_5_0_2
 - RODAR UM git fetch upstream
 - RODAR UM git rebase upstream/bp-RELENG_5_0_2
@@ -54,8 +47,7 @@
 - AVISAR O GARGA PELO TELEGRAM com a mensagem "Abri o PR #numero_do_PR no repo Bluepex/utm OU Abri o PR #numero_do_PR no repo Bluepex/FreeBSD-Ports"
 
 
-#######################################
+#####################################################################################################################################################
 # PACKS                               #
-#######################################
 - PARA PUXAR A BRANCH
 git pull origin update_5.0.2_p2.2
