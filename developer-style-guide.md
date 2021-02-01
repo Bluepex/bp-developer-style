@@ -1,4 +1,4 @@
-#Use Repository
+# Use Repository
 
 Style and Definitions for the VIM Editor: https://github.com/mvclaudianobj/bp-developer-style
 
@@ -10,10 +10,7 @@ Official Core-UTM Repository: https://github.com/Bluepex/utm (require requesting
 Official Ports-UTM Repository: https://github.com/Bluepex/FreeBSD-ports (require requesting permission)
     Branch Commiting: bp-devel
 
-#Developer Style Guide
-
-This page covers rules and styles to be used when submitting code for inclusion in pfSense® software.
-Developer Rules
+# Developer Style Guide
 
     Never commit untested code.
 
@@ -51,7 +48,7 @@ Developer Rules
 
     Always use full paths when calling an executable (e.g. /usr/bin/grep NOT grep)
 
-HTML Specific Rules
+# HTML Specific Rules
 
 Note
 
@@ -181,7 +178,7 @@ General rules
 
     If a PHP-internal function is an alias for another function, use the original (i.e. use exit() instead of die())
 
-Indent style
+# Indent style
 
     Use K&R, BSD KNF variant style:
 
@@ -234,7 +231,7 @@ Indent style
 
     Ensure there is NO whitespace on empty lines. For example, a line must not contain only spaces or only tabs
 
-Configuration Manipulation
+# Configuration Manipulation
 
     Boolean values which are false should be un-set:
 
@@ -244,7 +241,7 @@ Configuration Manipulation
 
     unset($config['system']['enablesshd']);
 
-JavaScript Specific Rules
+# JavaScript Specific Rules
 
     pfSense software does not support outdated browsers, so do not take special measures to use code required by old/obsolete browsers or rendering engines
 
@@ -256,7 +253,7 @@ JavaScript Specific Rules
 
         For example, be extremely cautions of values inserted into JavaScript via PHP variables. json_encode() can help avoid a situation where a user-supplied string could include text such as quotes or semicolons that leads to execution of arbitrary JavaScript
 
-Shell Script Specific Rules
+# Shell Script Specific Rules
 
     Use braces in all variable references for proper parameter expansion:
 
@@ -282,7 +279,7 @@ Useful resources for working with pkg and ports include:
 
     make -DNO_DEPENDS check-plist
 
-Other Guidelines:
+# Other Guidelines:
 
     A port version or revision must increase for the port to be rebuilt, otherwise changes will not propagate to the pkg servers to be picked up by clients
 
@@ -294,10 +291,11 @@ Other Guidelines:
 
         Do not add or change PORTEPOCH except under direction of a committer
 
-External Code
+# External Code
 
 Code that has been imported from an external source does not need to be changed to fit these guidelines.
 Editor Configuration
 
-The pfSense project uses a similar coding style to FreeBSD, which has editor configurations for Emacs and Vim. The FreeBSD man page style(9) contains additional relevant material.
+The 
+project uses a similar coding style to FreeBSD, which has editor configurations for Emacs and Vim. The FreeBSD man page style(9) contains additional relevant material.
 
