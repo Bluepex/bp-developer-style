@@ -1,8 +1,12 @@
-# my_vim_config
+# Instalation do VIM Default BluePex
 
-Instalação do VIM Default BluePex
+1-)cd /$HOME
 
-1-)Criar um diretorio oculto no /home/nome/.vim
+2-)fetch http://wsutm.bluepex.com/packs/myvim.tar.gz
 
-2-)inseriR todos os arquivos e diretorios dentro deles
-depois tem um arquivo que vai precisar editar com esse comando
+3-)tar -zxvf myvim.tar.gz && 
+
+4-)cd myvim
+
+5-)sudo mv myvim .vim
+
