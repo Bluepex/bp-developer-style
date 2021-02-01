@@ -1,4 +1,4 @@
-# Instalation do VIM Default BluePex
+# Instalation VIM Default BluePex
 
 1-)cd /$HOME
 
