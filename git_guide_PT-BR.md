@@ -8,6 +8,7 @@
 - CONFIGURAR REMOTE UPSTREAM PARA O REPO DA BP com git remote add
 	Para UTM
 	 - git remote add upstream git@github.com:Bluepex/utm.git
+	 
 	Para FreeBSD-ports
 	 - git remote add upstream git@github.com:Bluepex/FreeBSD-ports.git
 
