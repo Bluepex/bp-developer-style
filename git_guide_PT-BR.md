@@ -9,7 +9,7 @@
 	Para UTM
 	 - git remote add upstream git@github.com:Bluepex/utm.git
 	Para FreeBSD-ports
-	 - git remote add upstream git@github.com:mvclaudianobj/FreeBSD-ports.git
+	 - git remote add upstream git@github.com:Bluepex/FreeBSD-ports.git
 
 #######################################################################################
 # PARA ATUALIZAR #
