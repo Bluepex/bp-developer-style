@@ -6,6 +6,7 @@
 - FAZER FORK DO REPO BP
 - FAZER CLONE DO FORK
 - CONFIGURAR REMOTE UPSTREAM PARA O REPO DA BP com git remote add
+	
 	Para UTM
 	 - git remote add upstream git@github.com:Bluepex/utm.git
 	 
