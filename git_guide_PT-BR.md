@@ -29,6 +29,7 @@
 # SE ERRAR #
 - git stash
 - git branch -D nome_da_branch
+- git stash pop
 
 ########################################################################################
 # PARA CRIAR BRANCH NOVA E ABRIR PR #
