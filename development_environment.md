@@ -6,7 +6,7 @@ Text Editor: VIM
 
 Virtualizer: VirtualBox >= 6.0
 
-Version: GIT and TIG
+Code Version: GIT and TIG
 
 Ftp: Filezila
 
