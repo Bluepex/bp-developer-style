@@ -10,21 +10,21 @@
 - CONFIGURAR REMOTE UPSTREAM PARA O REPO DA BP com git remote add
 	
 	Para UTM
-	 - git remote add upstream git@github.com:Bluepex/utm.git
+	 - git remote add bluepex git@github.com:Bluepex/utm.git
 	 
 	Para FreeBSD-ports
-	 - git remote add upstream git@github.com:Bluepex/FreeBSD-ports.git
+	 - git remote add bluepex git@github.com:Bluepex/FreeBSD-ports.git
 
 #######################################################################################
 # PARA ATUALIZAR #
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-RELENG_5_0_2 (Não rodar se for a primeira vez e o fork estiver desatualizado)
-- RODAR UM git fetch upstream
-- RODAR UM git rebase upstream/bp-RELENG_5_0_2
-- RODAR UM git origin bp-RELENG_5_0_2
+- RODAR UM git fetch bluepex
+- RODAR UM git rebase bluepex/bp-master
+- RODAR UM git origin bp-master
 
 - Atualizado Dez/2020
-- RODAR UM git fetch upstream
-- RODAR git reset --hard upstream/bp-master
+- RODAR UM git fetch bluepex
+- RODAR git reset --hard bluepex/bp-master
 - RODAR git push
 
 #######################################################################################
@@ -36,10 +36,10 @@
 ########################################################################################
 # PARA CRIAR BRANCH NOVA E ABRIR PR #
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-RELENG_5_0_2
-- RODAR UM git fetch upstream
-- RODAR UM git rebase upstream/bp-RELENG_5_0_2
+- RODAR UM git fetch bluepex
+- RODAR UM git rebase bluepex/bp-RELENG_5_0_2
 - RODAR UM git push
-- RODAR UM git checkout --no-track -b NOME_DO_BRANCH upstream/bp-RELENG_5_0_2
+- RODAR UM git checkout --no-track -b NOME_DO_BRANCH bluepex/bp-RELENG_5_0_2
 - MUDAR ARQUIVOS QUE VÃO ENTRAR NO PR
 - RODAR UM git diff PARA CORRIGIR IDENTAÇÕES E VER ALTERAÇÕES
 - RODAR UM git status
