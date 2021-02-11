@@ -46,7 +46,7 @@
 - RODAR UM git add .
 - RODAR UM git commit (Mensagens em ingles, usar google tradutor) - Primeira linha descrição breve, pula uma linha descrição completa
 - AO FINALIZAR DESCRIÇÃO DO COMMIT SALVAR COMMIT COM :x no vi
-- RODAR um git push usuario_git nome_da_branch_nova
+- RODAR um git push usuario_git nome_branch_nova_local:nome_branch_nova_remota
 - IR NO GITHUB, SELECIONAR A BRANCH bp-master E CLICAR PARA ABRIR PR
 - NA PROXIMA TELA SELECIONAR A BRANCH bp-master E CRICAR EM CRIAR
 
