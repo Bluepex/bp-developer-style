@@ -20,7 +20,7 @@
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-master (Não rodar se for a primeira vez e o fork estiver desatualizado)
 - RODAR UM git fetch bluepex
 - RODAR UM git rebase bluepex/bp-master
-- RODAR UM git origin bp-master
+- RODAR UM git usuario_git bp-master
 
 - Atualizado Dez/2020
 - RODAR UM git fetch bluepex
@@ -46,7 +46,7 @@
 - RODAR UM git add .
 - RODAR UM git commit (Mensagens em ingles, usar google tradutor) - Primeira linha descrição breve, pula uma linha descrição completa
 - AO FINALIZAR DESCRIÇÃO DO COMMIT SALVAR COMMIT COM :x no vi
-- RODAR um git push origin nome_da_branch_nova
+- RODAR um git push usuario_git nome_da_branch_nova
 - IR NO GITHUB, SELECIONAR A BRANCH bp-master E CLICAR PARA ABRIR PR
 - NA PROXIMA TELA SELECIONAR A BRANCH bp-master E CRICAR EM CRIAR
 
@@ -54,6 +54,6 @@
 ############################################################################################
 # PACKS #
 - PARA PUXAR A BRANCH
-git pull origin update_5.0.2_p2.2
+git pull usuario_git update_5.0.2_p2.2
 
 ############################################################################################
