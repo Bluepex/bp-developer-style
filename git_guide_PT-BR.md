@@ -3,6 +3,8 @@
 #######################################################################################
 
 # CLONAR REPO #
+- SE FOR CLONAR USE git clone -o usuario_git -b bp-master url_fork_git utm
+- SE JA TIVER CLONADO USE git remote rename origin usuario_git e git remote rename upstream bluepex
 - FAZER FORK DO REPO BP
 - FAZER CLONE DO FORK
 - CONFIGURAR REMOTE UPSTREAM PARA O REPO DA BP com git remote add
