@@ -1,4 +1,5 @@
 # Developer Style Guide
+    Always create variables, function parameters and function and comments in english language    
 
     Never commit untested code.
 
