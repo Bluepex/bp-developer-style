@@ -20,7 +20,7 @@
 - DAR UM GIT CHECKOUT PARA A BRANCH bp-master (Não rodar se for a primeira vez e o fork estiver desatualizado)
 - RODAR UM git fetch bluepex
 - RODAR UM git rebase bluepex/bp-master
-- RODAR UM git usuario_git bp-master
+- RODAR UM git push usuario_git bp-master
 
 - Atualizado Dez/2020
 - RODAR UM git fetch bluepex
