@@ -4,6 +4,17 @@ Operating Systems: Linux Ubuntu> = 20.04 or Linux Mint> = 20.04
 
 Text Editor: VIM
 
+Instalation:
+
+mkdir myvim
+cd myvim
+wget http://wsutm.bluepex.com/packs/myvim.tar.gz
+tar -zxvf myvim.tar.gz
+cp vimrc ~/.vimrc
+cd ..
+mv vim/ /home/USER/.vim
+
+
 Virtualizer: VirtualBox >= 6.0
 
 Code Version: GIT and TIG
