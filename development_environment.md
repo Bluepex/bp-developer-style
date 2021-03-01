@@ -28,4 +28,4 @@ cp vimrc ~/.vimrc
 
 cd ..
 
-mv vim/ /home/$HOME/.vim
+mv myvim/ /home/USER/.vim
