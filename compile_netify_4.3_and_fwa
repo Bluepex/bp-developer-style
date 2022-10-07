@@ -1,0 +1,89 @@
+COMPILE netify 4.3
+
+# pkg install json-c auto-tools git gmake pkgconf google-perftools bash bison
+# git clone --recurse-submodule https://gitlab.com/netify.ai/public/netify-agent.git
+# cd netify-agent
+# Aplicar o patch que eu vou colar depois
+# ./autogen.sh && ./configure --disable-conntrack --disable-inotify --disable-libtcmalloc --disable-dependency-tracking CC=clang CXX=clang++ MAKE=gmake
+# gmake -j
+# mkdir /tmp/xpto
+# gmake DESTDIR=/tmp/xpto install
+# cd /tmp/xpto
+
+svnlite co https://svn.freebsd.org/ports/head/Templates /usr/ports/Templates
+svnlite co https://svn.freebsd.org/ports/head/Mk /usr/ports/Mk
+MAKE PKG
+cd netify-agent
+# gmake deploy-freebsd
+
+
+***************************************
+Esse é o patch que precisei aplicar:
+
+diff --git a/Makefile.am b/Makefile.am
+index 68195e6..80f7595 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -19,7 +19,7 @@ SUBDIRS_EXTRA += libs/jemalloc
+ endif
+ endif
+
+-SUBDIRS = libs/inih libs/ndpi $(SUBDIRS_EXTRA) include src deploy doc tests
++SUBDIRS = libs/inih libs/ndpi $(SUBDIRS_EXTRA) include src deploy doc
+ DIST_SUBDIRS = $(SUBDIRS)
+
+ EXTRA_DIST = LICENSE autogen.sh debian/compat \
+diff --git a/configure.ac b/configure.ac
+index 0cb26f9..646b677 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -399,7 +399,7 @@ AC_SUBST([ND_DEFINES], [$ND_DEFINES])
+ # Output files
+ AC_CONFIG_FILES([deploy/openwrt/Makefile deploy/openwrt/files/netifyd.init deploy/openwrt/files/netifyd.config])
+ AC_CONFIG_FILES([libnetifyd.pc])
+-AC_CONFIG_FILES([Makefile src/Makefile include/Makefile doc/Makefile tests/Makefile deploy/Makefile])
++AC_CONFIG_FILES([Makefile src/Makefile include/Makefile doc/Makefile deploy/Makefile])
+ AC_CONFIG_FILES([deploy/buildroot/netifyd.mk])
+ AC_CONFIG_FILES([deploy/debian/Makefile])
+ AC_CONFIG_FILES([deploy/edgeos/Makefile])
+*********************************************
+
+RUNNING
+pkg install jq
+/usr/local/sbin/netifyd -I igb0
+/usr/local/sbin/netifyd -E igb1
+
+
+
+
+
+COMPILE netify-fwa
+pkg delete -f python39-3.9.13
+pkg install -f python38-3.8.13_2
+# Aplicar diff
+
+***********************************************
+diff --git a/configure.ac b/configure.ac
+index 72428ea..38a2e41 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -35,7 +35,7 @@ AM_CONDITIONAL([HAVE_OSC], [test x$osc != x])
+ 
+ case "${host_os}" in
+     freebsd*)
+-        PKG_CHECK_MODULES([PYTHON36], [python-3.6])
++        PKG_CHECK_MODULES([PYTHON38], [python-3.8])
+         AM_CONDITIONAL(USE_PF, true)
+         ;;
+     *)
+*************************************************
+./autogen.sh && ./configure CC=clang CXX=clang++ MAKE=gmake
+cp -R /usr/local/include/python3.8/* /usr/local/netify-fwa/pf/
+gmake -j
+mkdir /tmp/xpto2
+gmake DESTDIR=/tmp/xpto2 install
+cd /tmp/xpto2
+
+RUNNING
+python3.8 -m pip install pf
+/usr/local/sbin/netify-fwa -d
