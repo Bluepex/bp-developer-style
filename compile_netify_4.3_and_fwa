@@ -1,6 +1,6 @@
 COMPILE netify 4.3
 
-# pkg install json-c auto-tools git gmake pkgconf google-perftools bash bison
+# pkg install json-c autotools git gmake pkgconf google-perftools bash bison
 # git clone --recurse-submodule https://gitlab.com/netify.ai/public/netify-agent.git
 # cd netify-agent
 # Aplicar o patch que eu vou colar depois
