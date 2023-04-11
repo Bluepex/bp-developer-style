@@ -1,14 +1,13 @@
-COMPILE netify 4.3
+### COMPILE netify 4.x
 
-# pkg install json-c autotools git gmake pkgconf google-perftools bash bison
-# git clone --recurse-submodule https://gitlab.com/netify.ai/public/netify-agent.git
-# cd netify-agent
-# Aplicar o patch que eu vou colar depois
-# ./autogen.sh && ./configure --disable-conntrack --disable-inotify --disable-libtcmalloc --disable-dependency-tracking CC=clang CXX=clang++ MAKE=gmake
-# gmake -j
-# mkdir /tmp/xpto
-# gmake DESTDIR=/tmp/xpto install
-# cd /tmp/xpto
+pkg install json-c autotools git gmake pkgconf google-perftools bash bison
+git clone --recursive https://gitlab.com/mvclaudiano/netify-agent.git
+cd netify-agent
+./autogen.sh && ./configure --disable-conntrack --disable-inotify --disable-libtcmalloc --disable-dependency-tracking CC=clang CXX=clang++ MAKE=gmake
+gmake -j
+mkdir /tmp/xpto
+gmake DESTDIR=/tmp/xpto install
+cd /tmp/xpto
 
 svnlite co https://svn.freebsd.org/ports/head/Templates /usr/ports/Templates
 svnlite co https://svn.freebsd.org/ports/head/Mk /usr/ports/Mk
@@ -16,48 +15,15 @@ MAKE PKG
 cd netify-agent
 # gmake deploy-freebsd
 
-
-***************************************
-Esse é o patch que precisei aplicar:
-
-diff --git a/Makefile.am b/Makefile.am
-index 68195e6..80f7595 100644
---- a/Makefile.am
-+++ b/Makefile.am
-@@ -19,7 +19,7 @@ SUBDIRS_EXTRA += libs/jemalloc
- endif
- endif
-
--SUBDIRS = libs/inih libs/ndpi $(SUBDIRS_EXTRA) include src deploy doc tests
-+SUBDIRS = libs/inih libs/ndpi $(SUBDIRS_EXTRA) include src deploy doc
- DIST_SUBDIRS = $(SUBDIRS)
-
- EXTRA_DIST = LICENSE autogen.sh debian/compat \
-diff --git a/configure.ac b/configure.ac
-index 0cb26f9..646b677 100644
---- a/configure.ac
-+++ b/configure.ac
-@@ -399,7 +399,7 @@ AC_SUBST([ND_DEFINES], [$ND_DEFINES])
- # Output files
- AC_CONFIG_FILES([deploy/openwrt/Makefile deploy/openwrt/files/netifyd.init deploy/openwrt/files/netifyd.config])
- AC_CONFIG_FILES([libnetifyd.pc])
--AC_CONFIG_FILES([Makefile src/Makefile include/Makefile doc/Makefile tests/Makefile deploy/Makefile])
-+AC_CONFIG_FILES([Makefile src/Makefile include/Makefile doc/Makefile deploy/Makefile])
- AC_CONFIG_FILES([deploy/buildroot/netifyd.mk])
- AC_CONFIG_FILES([deploy/debian/Makefile])
- AC_CONFIG_FILES([deploy/edgeos/Makefile])
-*********************************************
-
 RUNNING
 pkg install jq
 /usr/local/sbin/netifyd -I igb0
 /usr/local/sbin/netifyd -E igb1
 
+******************************************************************************************************************************************************
 
+### COMPILE netify-fwa
 
-
-
-COMPILE netify-fwa
 pkg delete -f python39-3.9.13
 pkg install -f python38-3.8.13_2
 # Aplicar diff
